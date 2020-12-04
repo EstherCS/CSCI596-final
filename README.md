@@ -15,12 +15,15 @@ When you want to apply for the job on the websites, sometimes you can't understa
 
  1. Use GitHub job API ([https://jobs.github.com/api](https://jobs.github.com/api)) to fetch job information as our data source which matches some specific keywords. 
 ex: If keyword is "developer", then we could get a list of "developer" jobs.
- 2. Dropped unnecessary attributes from the response by Step 1 and extract keywords of the job by using MapReduce.
- *We count the frequency of each words and the top 3 frequent words are considered as "keywords" in our case.*
-![enter image description here](https://s3.amazonaws.com/files.dezyre.com/images/Tutorials/MapReduce_Example.jpg)
+ 2. Dropped unnecessary attributes from the response by Step 1.<br/>
+ *Raw data from the API:*<br/>
+ ![enter image description here](https://i.imgur.com/jVskXMq.png)
+ 3. Extract keywords of the job by using MapReduce.<br/>
+ *We count the frequency of each words and the top 3 frequent words are considered as "keywords" in our case.*<br/>
+![enter image description here](https://s3.amazonaws.com/files.dezyre.com/images/Tutorials/MapReduce_Example.jpg)<br/>
 **Steps of MapReduce**
-- **Splitting step** - We first split sentences into individual words
-- **Mapping step** - Each word is identified and mapped with number 1
+- **Splitting step** - We first split sentences into words
+- **Mapping step** - Each words is identified and mapped with number 1
 - **Shuffling step** - A partitioner takes actions to do "shuffling" so that tuples with the same key are sent to the same node
 - **Reducing step** - The Reducer node processes all the tuples to count each specific keys and set its frequency to the value of the tuple.
 3. Run the server and use a get request to retrieve the data. Then we could go through above steps and produce keywords and also print some other important job attributes as the final output.
@@ -47,3 +50,6 @@ Compared to the first approach, we change the following intermediate steps of Ma
 -  Reduce the RDD data using the word key
     
 - Collect the RDD: our computation is not performed until our result is collected
+
+## Results
+![enter image description here](https://i.imgur.com/3WRAa0W.png)
