@@ -26,7 +26,7 @@ ex: If keyword is "developer", then we could get a list of "developer" jobs.
 - **Mapping step** - Each words is identified and mapped with number 1
 - **Shuffling step** - A partitioner takes actions to do "shuffling" so that tuples with the same key are sent to the same node
 - **Reducing step** - The Reducer node processes all the tuples to count each specific keys and set its frequency to the value of the tuple.
-3. Run the server and use a get request to retrieve the data. Then we could go through above steps and produce keywords and also print some other important job attributes as the final output.
+4. Run the server and use a get request to retrieve the data. Then we could go through above steps and produce keywords and also print some other important job attributes as the final output.
 
 ## Second approach (PySpark)
 **What is Spark?**
@@ -52,4 +52,5 @@ Compared to the first approach, we change the following intermediate steps of Ma
 - Collect the RDD: our computation is not performed until our result is collected
 
 ## Results
+Search By location:
 ![enter image description here](https://i.imgur.com/3WRAa0W.png)
