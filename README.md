@@ -10,6 +10,19 @@ When you want to apply for the job on the websites, sometimes you can't understa
 **Set&lt;String>** keywords <br>
 **String** url <br>
 **String** imageUrl <br>
+
+## TF-IDF algorithm
+
+When calculating keywords, there are some words which has a high frequency in all documents but are not so meaningful. Such as 'a', 'the', 'is', 'are' etc. To avoid these words been selected as keywords, we apply TF-IDF algorithm</br>
+To put it simply, **TF** is the frequency of the words in a document and **IDF** is the importance of the word in the document. If some words appear in a lot of different documents, we could expect a low importance of the words and have a low value for IDF.
+
+- **Final score = TF * IDF**
+1. *TF-Term frequency*
+2. *IDF-Inverse document frequency*
+- **TF (w) = number of w in document / number of all words in document**
+- **IDF (w) = log (number of all documents / number of documents have w + 1)**</br>
+ *The reason why we add 1 is to avoid the case when w never exists in any doc.*
+
 ## First approach (MapReduce)
 **Steps**
 
@@ -20,7 +33,7 @@ ex: If keyword is "developer", then we could get a list of "developer" jobs.
  ![enter image description here](https://i.imgur.com/jVskXMq.png)
  3. Extract keywords of the job by using MapReduce.<br/>
  *We count the frequency of each words and the top 3 frequent words are considered as "keywords" in our case.*<br/>
-![enter image description here](https://s3.amazonaws.com/files.dezyre.com/images/Tutorials/MapReduce_Example.jpg)<br/>
+  ![enter image description here](https://s3.amazonaws.com/files.dezyre.com/images/Tutorials/MapReduce_Example.jpg)
 **Steps of MapReduce**
 - **Splitting step** - We first split sentences into words
 - **Mapping step** - Each words is identified and mapped with number 1
@@ -52,5 +65,7 @@ Compared to the first approach, we change the following intermediate steps of Ma
 - Collect the RDD: our computation is not performed until our result is collected
 
 ## Results
-Search By location:
-![enter image description here](https://i.imgur.com/3WRAa0W.png)
+![enter image description here](https://i.imgur.com/3WRAa0W.png)</br>
+![enter image description here](https://i.imgur.com/jbmQEYc.jpg)</br>
+![enter image description here](https://i.imgur.com/W5Alx69.jpg)</br>
+
