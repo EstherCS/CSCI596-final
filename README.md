@@ -69,3 +69,15 @@ Compared to the first approach, we change the following intermediate steps of Ma
 ![enter image description here](https://i.imgur.com/jbmQEYc.jpg)</br>
 ![enter image description here](https://i.imgur.com/W5Alx69.jpg)</br>
 
+## Contribution:
+Shih-Yu Lai:
+USC-ID: 7183984563
+Discuss project topic with others and implement first approach.
+
+Shiuan-Chin Huang:
+USC-ID: 9815633745
+Discuss project topic with others and implement second approach.
+
+Yu-Chieh Cheng:
+USC-ID: 5261294599
+Discuss project topic with others and write the report.
